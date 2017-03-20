@@ -8,6 +8,8 @@ output: html_document
 
 ## Loading the data
 
+could be all elections from state
+who won vs contribution totals
 
 
 ```{r, include=FALSE}
