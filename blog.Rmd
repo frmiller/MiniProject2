@@ -8,9 +8,7 @@ output: html_document
 
 ## Loading the data
 
-wow
-Hey guys.
-Trying...
+
 
 ```{r, include=FALSE}
 load("house_elections.rda")
@@ -18,3 +16,8 @@ load("candidates.rda")
 load("committees.rda")
 load("contributions.rda")
 ```
+
+```{r}
+library(tidyverse)
+```
+
