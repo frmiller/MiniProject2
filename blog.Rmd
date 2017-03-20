@@ -10,12 +10,18 @@ output: html_document
 2 apply the function to multiple candidates (possibly several candidates in one state)
 3 make a bar graph to show their comparison
 
+<<<<<<< HEAD
 ## Loading the data
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> ca731f068f6a3bbe60aa5ed75bd7d408e955e9f5
 
 could be all elections from state
 who won vs contribution totals
+
+## Loading the data
+
 
 
 >>>>>>> 21b58ee206ebce692a8a6b93af7b630dcbcf49e3
@@ -24,9 +30,7 @@ load("house_elections.rda")
 load("candidates.rda")
 load("committees.rda")
 load("contributions.rda")
-```
-
-```{r}
 library(tidyverse)
 ```
+
 
