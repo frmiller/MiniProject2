@@ -6,11 +6,19 @@ output: html_document
 ---
 
 ## goals
-write a function to find the portion of the contribution to one candidate
-apply the function to multiple candidates (possibly several candidates in one state)
-make a bar graph to show their comparison
+1 write a function to find the portion of the contribution to one candidate
+2 apply the function to multiple candidates (possibly several candidates in one state)
+3 make a bar graph to show their comparison
 
 ## Loading the data
+<<<<<<< HEAD
+=======
+
+could be all elections from state
+who won vs contribution totals
+
+
+>>>>>>> 21b58ee206ebce692a8a6b93af7b630dcbcf49e3
 ```{r, include=FALSE}
 load("house_elections.rda")
 load("candidates.rda")
