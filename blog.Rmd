@@ -6,10 +6,12 @@ output: html_document
 ---
 
 
-## Loading the data
 
 could be all elections from state
 who won vs contribution totals
+
+## Loading the data
+
 
 
 ```{r, include=FALSE}
