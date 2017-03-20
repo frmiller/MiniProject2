@@ -1,6 +1,6 @@
 ---
 title: "Mini-Project 2"
-author: "Starry Zhou, Fiona Miller"
+author: "Starry Zhou, Fiona Miller, Josephine Nyoike"
 date: "March 24, 2017"
 output: html_document
 ---
@@ -9,6 +9,7 @@ output: html_document
 ## Loading the data
 
 wow
+Hey guys.
 
 ```{r, include=FALSE}
 load("house_elections.rda")
