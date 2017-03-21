@@ -23,3 +23,6 @@ library(tidyverse)
 ```
 
 
+## Joining tables
+
+join the candidate table with contributions and individuals also maybe committees? 
