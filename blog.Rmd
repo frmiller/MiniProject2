@@ -47,7 +47,13 @@ joined <-
 joined
 ```
 
+
+## Function for proportion of contributions
+
+
+
 ## Visual
+
 
 What type of graph?
 
