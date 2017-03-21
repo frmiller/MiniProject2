@@ -9,7 +9,6 @@ output: html_document
 1 write a function to find the portion of the contribution to one candidate
 2 apply the function to multiple candidates (possibly several candidates in one state)
 3 make a bar graph to show their comparison
-TEST TEST ttt
 
 <<<<<<< HEAD
 ## Loading the data
@@ -23,10 +22,15 @@ who won vs contribution totals
 
 ## Loading the data
 
+<<<<<<< HEAD
 
 
 >>>>>>> 21b58ee206ebce692a8a6b93af7b630dcbcf49e3
 ```{r, include=FALSE}
+
+```
+{r, message=FALSE}
+ dbe35aeb21a0cc374cec20e8ccdcc7e86921e60f
 load("house_elections.rda")
 load("candidates.rda")
 load("committees.rda")
@@ -34,4 +38,47 @@ load("contributions.rda")
 library(tidyverse)
 ```
 
+## Five verbs
+use select to just get candidates from one state (MA?)
 
+```{r}
+MA_only <- filter(candidates, cand_office_state == "MA")
+```
+
+
+## Joining tables
+
+join the candidate table with contributions and individuals also maybe committees?
+
+
+
+## Visual
+
+What type of graph?
+
+## Blog
+
+explaining the visaul and what found from data
+
+## Grading Rubric
+
+To get full credit for this Mini-Project, you must earn 10 points out of the following 12:
+
+Baseline
+
++1 for an .Rmd that compiles without errors
++1 for including the code that wrangled the data
++1 for using at least two of the five basic verbs (i.e., select(), mutate(), etc.)
++1 for annotating your data wrangling pipeline (this can be in a few sentences in text surrounding the R code chunks, or some informative comments inside the R code chunks)
++1 unnecessary messages from R are hidden from being displayed in the HTML
+Average
+
++1 for explaining in a single coherent sentence what we can learn from these data
++1 for writing a function rather than re-writing the same code multiple times
++1 for using at least one join (e.g. left_join(), inner_join(), etc.)
++1 blog post text provides context or background useful in interpreting the graphic
++1 for using GitHub for version control
+Advanced
+
++1 for using the Issues tab on GitHub to plan your project
++1 WOW factor: awarded at the professors’ discretion for submissions that are exceptionally compelling
