@@ -44,8 +44,15 @@ join the candidate table with contributions and individuals also maybe committee
 joined <- 
   MA_only %>%
   left_join(contr_small,by="cand_id")
-joined
 ```
+
+```{r}
+join2 <- 
+  joined %>%
+  left_join(indv_small,by="cmte_id")
+join2
+```
+
 
 
 ## Function for proportion of contributions
