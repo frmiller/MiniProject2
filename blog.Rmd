@@ -48,8 +48,12 @@ joined <-
 ```
 
 ```{r}
-joined %>%
+j2 <- joined %>%
+  select(-cmte_id)
+
+j3 <- j2 %>%
   group_by(cand_id) %>%
+  summarise(total = sum(transaction_amt))
   
 ```
 
