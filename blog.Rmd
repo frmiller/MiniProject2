@@ -31,7 +31,12 @@ MA_only <- candidates %>% filter(cand_office_state == "MA", cand_election_yr== "
 contr_small <- select(contributions, cmte_id, transaction_amt, cand_id)
 
 ```
-
+```{r}
+joined <- 
+  MA_only %>%
+  left_join(contr_small,by="cand_id")
+joined
+```
 
 ## Joining tables
 
