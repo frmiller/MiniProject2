@@ -26,7 +26,8 @@ library(tidyverse)
 use select to just get candidates from one state (MA?)
 
 ```{r}
-MA_only <- filter(candidates, cand_office_state == "MA", cand_election_yr== "2012")
+MA_only <- candidates %>% filter(cand_office_state == "MA", cand_election_yr== "2012")
+
 ```
 
 
