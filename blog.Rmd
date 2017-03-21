@@ -70,12 +70,11 @@ po
 
 
 
-
-
-
-
 ## Function for proportion of contributions
 
+```{r}
+
+```
 
 
 ## Visual
