@@ -58,21 +58,9 @@ j3 <- j2 %>%
 ```
 
 
-```{r}
-join2 <- 
-  joined %>%
-  right_join(indv_small,by="cmte_id")
-join2
-```
-
-
 
 
 ## Function for proportion of contributions
-
-```{r}
-mutate(join2, total_cont = transaction_amt.x + transaction_amt.y)
-```
 
 
 
