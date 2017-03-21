@@ -28,7 +28,8 @@ use select to just get candidates from one state (MA?)
 
 ```{r}
 
-MA_only <- candidates %>% filter(cand_office_state == "MA", cand_election_yr== "2012")
+MA_only <- candidates %>% filter(cand_office_state == "MA", cand_election_yr== "2012") %>%
+  select(cand_id, cand_name, cand_party_affiliation, cand_office)
 
 contr_small <- select(contributions, cmte_id, transaction_amt, cand_id)
 
@@ -47,15 +48,29 @@ joined <-
 ```
 
 ```{r}
+joined %>%
+  group_by(cand_id) %>%
+  
+```
+
+
+```{r}
 join2 <- 
   joined %>%
-  left_join(indv_small,by="cmte_id")
+  right_join(indv_small,by="cmte_id")
 join2
 ```
 
 
 
+
 ## Function for proportion of contributions
+
+```{r}
+mutate(join2, total_cont = transaction_amt.x + transaction_amt.y)
+```
+
+
 
 
 
