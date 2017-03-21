@@ -9,6 +9,7 @@ output: html_document
 1 write a function to find the portion of the contribution to one candidate
 2 apply the function to multiple candidates (possibly several candidates in one state)
 3 make a bar graph to show their comparison
+TEST TEST 
 
 <<<<<<< HEAD
 ## Loading the data
