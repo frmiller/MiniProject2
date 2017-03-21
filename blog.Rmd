@@ -25,4 +25,12 @@ library(tidyverse)
 
 ## Joining tables
 
-join the candidate table with contributions and individuals also maybe committees? 
+join the candidate table with contributions and individuals also maybe committees?
+
+## Visual
+
+What type of graph?
+
+## Blog
+
+explaining the visaul and what found from data
