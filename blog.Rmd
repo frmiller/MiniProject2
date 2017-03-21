@@ -27,6 +27,9 @@ library(tidyverse)
 
 join the candidate table with contributions and individuals also maybe committees?
 
+## Five verbs
+use select to just get candidates from one state (MA?)
+
 ## Visual
 
 What type of graph?
