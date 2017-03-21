@@ -35,6 +35,7 @@ load("house_elections.rda")
 load("candidates.rda")
 load("committees.rda")
 load("contributions.rda")
+load("individuals.rda")
 library(tidyverse)
 ```
 
@@ -42,7 +43,13 @@ library(tidyverse)
 use select to just get candidates from one state (MA?)
 
 ```{r}
-MA_only <- filter(candidates, cand_office_state == "MA")
+
+MA_only <- candidates %>% filter(cand_office_state == "MA", cand_election_yr== "2012") %>%
+  select(cand_id, cand_name, cand_party_affiliation, cand_office)
+
+contr_small <- select(contributions, cmte_id, transaction_amt, cand_id)
+
+indv_small <- select(individuals, cmte_id, transaction_amt)
 ```
 
 
@@ -50,9 +57,44 @@ MA_only <- filter(candidates, cand_office_state == "MA")
 
 join the candidate table with contributions and individuals also maybe committees?
 
+```{r}
+joined <- 
+  MA_only %>%
+  left_join(contr_small,by="cand_id")
+```
+
+```{r}
+j2 <- joined %>%
+  select(-cmte_id)
+
+j3 <- j2 %>%
+  group_by(cand_id) %>%
+  summarise(total = sum(transaction_amt))
+  
+final <- 
+  MA_only %>%
+  left_join(j3, by="cand_id")
+final
+```
+
+```{r}
+po <- final %>%
+  mutate(prop=total/sum(total)*100)
+po
+```
+
+
+
+
+## Function for proportion of contributions
+
+```{r}
+
+```
 
 
 ## Visual
+
 
 What type of graph?
 
