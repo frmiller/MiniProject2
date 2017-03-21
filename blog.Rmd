@@ -58,7 +58,16 @@ j3 <- j2 %>%
 final <- 
   MA_only %>%
   left_join(j3, by="cand_id")
+final
 ```
+
+```{r}
+po <- final %>%
+  mutate(prop=total/sum(total)*100)
+po
+```
+
+
 
 
 
