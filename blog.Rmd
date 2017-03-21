@@ -28,8 +28,10 @@ use select to just get candidates from one state (MA?)
 ```{r}
 
 MA_only <- candidates %>% filter(cand_office_state == "MA", cand_election_yr== "2012")
+
 contr_small <- select(contributions, cmte_id, transaction_amt, cand_id)
 
+indv_small <- select(individuals, cmte_id, transaction_amt)
 ```
 
 
