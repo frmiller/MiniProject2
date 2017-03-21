@@ -34,3 +34,26 @@ What type of graph?
 ## Blog
 
 explaining the visaul and what found from data
+
+## Grading Rubric
+
+To get full credit for this Mini-Project, you must earn 10 points out of the following 12:
+
+Baseline
+
++1 for an .Rmd that compiles without errors
++1 for including the code that wrangled the data
++1 for using at least two of the five basic verbs (i.e., select(), mutate(), etc.)
++1 for annotating your data wrangling pipeline (this can be in a few sentences in text surrounding the R code chunks, or some informative comments inside the R code chunks)
++1 unnecessary messages from R are hidden from being displayed in the HTML
+Average
+
++1 for explaining in a single coherent sentence what we can learn from these data
++1 for writing a function rather than re-writing the same code multiple times
++1 for using at least one join (e.g. left_join(), inner_join(), etc.)
++1 blog post text provides context or background useful in interpreting the graphic
++1 for using GitHub for version control
+Advanced
+
++1 for using the Issues tab on GitHub to plan your project
++1 WOW factor: awarded at the professors’ discretion for submissions that are exceptionally compelling
