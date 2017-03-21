@@ -33,18 +33,18 @@ contr_small <- select(contributions, cmte_id, transaction_amt, cand_id)
 
 indv_small <- select(individuals, cmte_id, transaction_amt)
 ```
+
+
+## Joining tables
+
+join the candidate table with contributions and individuals also maybe committees?
+
 ```{r}
 joined <- 
   MA_only %>%
   left_join(contr_small,by="cand_id")
 joined
 ```
-
-## Joining tables
-
-join the candidate table with contributions and individuals also maybe committees?
-
-
 
 ## Visual
 
