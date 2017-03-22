@@ -9,18 +9,9 @@ output: html_document
 1 write a function to find the portion of the contribution to one candidate
 2 apply the function to multiple candidates (possibly several candidates in one state)
 3 make a bar graph to show their comparison
-
-
-
 could be all elections from state
 who won vs contribution totals
 
-
-
-
-<<<<<<< HEAD
-```{r}
-=======
 ```{r, message=FALSE}
 load("house_elections.rda")
 load("candidates.rda")
@@ -85,15 +76,6 @@ portion <- final %>%
   mutate(prop = (total/(23038200))*100)
 head(portion)
 ```
-
-
-## Function for proportion of contributions
-
-
-## Visual
-
-
-What type of graph?
 
 ## Blog
 
