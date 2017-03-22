@@ -74,10 +74,18 @@ final
 ```
 
 ```{r}
-po <- final %>%
-  mutate(prop=total/sum(total)*100) %>% summarise(N = sum(total,na.rm=TRUE))
-po
+all <- final %>%
+  summarise(N = sum(total,na.rm=TRUE))
+all
 ```
+
+```{r}
+portion <- final %>%
+  group_by(cand_id)%>%
+  mutate(prop = (total/(23038200))*100)
+head(portion)
+```
+
 
 ## Function for proportion of contributions
 
