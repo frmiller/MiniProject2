@@ -18,8 +18,7 @@ who won vs contribution totals
 
 
 
-```{r, message=FALSE}
- dbe35aeb21a0cc374cec20e8ccdcc7e86921e60f
+```{r}
 load("house_elections.rda")
 load("candidates.rda")
 load("committees.rda")
@@ -68,18 +67,8 @@ final
 ```
 
 ```{r}
-po <- final %>%
-  mutate(prop=total/sum(total)*100)
-po
-```
-
-
-
-
-## Function for proportion of contributions
-
-```{r}
-jk
+final %>%
+  summarize(N=sum(total,na.rm=TRUE))
 ```
 
 
