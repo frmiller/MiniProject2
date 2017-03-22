@@ -74,9 +74,9 @@ final
 ```
 
 ```{r}
-po <- final %>%
-  mutate(prop=total/sum(total)*100) %>% summarise(N = sum(total,na.rm=TRUE))
-po
+final %>%
+   summarise(N = sum(total,na.rm=TRUE)) 
+
 ```
 
 ## Function for proportion of contributions
