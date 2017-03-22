@@ -18,7 +18,10 @@ who won vs contribution totals
 
 
 
+<<<<<<< HEAD
 ```{r}
+=======
+```{r, message=FALSE}
 load("house_elections.rda")
 load("candidates.rda")
 load("committees.rda")
@@ -36,9 +39,13 @@ use select to just get candidates from one state (MA?)
 MA_only <- candidates %>% filter(cand_office_state == "MA", cand_election_yr== "2012") %>%
   select(cand_id, cand_name, cand_party_affiliation, cand_office)
 
-contr_small <- select(contributions, cmte_id, transaction_amt, cand_id)
+contr_small <- contributions %>%
+  select(cmte_id, transaction_amt, cand_id) %>%
+  filter(transaction_amt >0)
 
-indv_small <- select(individuals, cmte_id, transaction_amt)
+indv_small <- individuals %>%
+  select(cmte_id, transaction_amt) %>%
+  filter(transaction_amt >0)
 ```
 
 
@@ -67,9 +74,12 @@ final
 ```
 
 ```{r}
-final %>%
-  summarize(N=sum(total,na.rm=TRUE))
+po <- final %>%
+  mutate(prop=total/sum(total)*100) %>% summarise(N = sum(total,na.rm=TRUE))
+po
 ```
+
+## Function for proportion of contributions
 
 
 ## Visual
