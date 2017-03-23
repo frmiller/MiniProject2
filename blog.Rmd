@@ -70,10 +70,23 @@ person_prop <- function(id)
     summarize(prop=(total/(23351994))*100)%>%
     select(prop)
 ```
+
 ```{r}
-##run the function to find the donations to a certain candidate (Barney Frank)
+##run the function to find the donations to a certain candidate (Barney Frank) to test function
 person_prop(id="H0MA04036")
 ```
+
+```{r}
+can_w_contr <- c("H0MA04036", "H0MA04119", "H0MA04127", "H0MA05066", "H0MA10082", "H2MA00014", "H2MA01020", "H2MA04040", "H2MA04073", "H2MA04107", "H2MA06078", "H2MA09072", "H2MA09213", "H4MA03022", "H4MA05043", "H4MA06033", "H6MA07101", "H8MA02041", "H8MA05143", "H8MA08071", "S0MA00109", "S2MA00113", "S2MA00139", "S2MA00170")
+```
+
+```{r}
+lapply(can_w_contr, FUN = person_prop) %>%
+  bind_rows()
+```
+
+
+
 ## Blog
 
 explaining the visaul and what found from data
