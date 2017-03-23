@@ -70,18 +70,12 @@ all
 ```
 
 ```{R}
-<<<<<<< HEAD
-person_porp <- function(id) 
-{
-=======
 
 person_prop <- function(id) 
->>>>>>> 8c0a864d7d85cc6bb2134b42847dd2a3a8f1b4e0
   final %>%
     filter(cand_id == id) %>%
     summarize(prop=(total/(23351994))*100)%>%
     select(prop)
-}
 ```
 ```{r}
 person_prop(id="H0MA04036")
