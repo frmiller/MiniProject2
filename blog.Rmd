@@ -33,30 +33,28 @@ indv_small <- individuals %>%
 ```
 
 ```{r}
-## Join the contribution table and individual table, so that we can see all information about one candidate in one table 
+## Show all candidates in MA with their contributions by committees
 joined <- 
   MA_only %>%
   left_join(contr_small,by="cand_id")
+head(joined)
 ```
 
-## 
 ```{r}
+## Change table joined into j2, remove column cmte_id, then find total committee contributions to candidate (so that contributions is only one row)
 j2 <- joined %>%
-  select(-cmte_id)
-
-j3 <- j2 %>%
+  select(-cmte_id) %>%
   group_by(cand_id) %>%
   summarise(total = sum(transaction_amt))
-  
+## Join j2 back to MA_only so that the cand_id and donations are matched to information about the candidates
 final <- 
   MA_only %>%
-  left_join(j3, by="cand_id")
+  left_join(j2, by="cand_id")
 final
 ```
 
-## 
 ```{r}
-##find total contributions to candidates in massachusetts
+##find total contributions to all candidates in MA
 all <- final %>%
   summarise(N = sum(total,na.rm=TRUE))
 all
@@ -74,9 +72,9 @@ person_prop <- function(id)
 ##run the function to find the donations to a certain candidate (Barney Frank)
 person_prop(id="H0MA04036")
 ```
-## Blog
 
-explaining the visaul and what found from data
+## Blog
+We analysised the candidates' contributions by commitees in MA, 2012. We selected candidates with positive contributions, and wrote a function to find the proportion of the contribution of one certain candidate to the total contributions to all candidates in MA. 
 
 ## Grading Rubric
 
