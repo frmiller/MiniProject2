@@ -74,7 +74,7 @@ person_prop <- function(id)
     select(prop)
 ```
 ```{r}
-##run the function to find the donations to a certain candidate
+##run the function to find the donations to a certain candidate (Barney Frank)
 person_prop(id="H0MA04036")
 ```
 ## Blog
