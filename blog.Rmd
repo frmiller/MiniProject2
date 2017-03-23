@@ -59,6 +59,7 @@ final
 
 ## 
 ```{r}
+##find total contributions to candidates in massachusetts
 all <- final %>%
   summarise(N = sum(total,na.rm=TRUE))
 all
@@ -73,6 +74,7 @@ person_prop <- function(id)
     select(prop)
 ```
 ```{r}
+##run the function to find the donations to a certain candidate
 person_prop(id="H0MA04036")
 ```
 ## Blog
