@@ -70,7 +70,7 @@ all
 ```
 
 ```{R}
-
+##create function to find proportion of donations one candidate gets in contrast to the other candidates in the state
 person_prop <- function(id) 
   final %>%
     filter(cand_id == id) %>%
