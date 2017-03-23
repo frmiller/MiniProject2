@@ -71,11 +71,14 @@ all
 ```
 
 ```{r}
-portion <- final %>%
-  group_by(cand_id)%>%
-  mutate(prop = (total/(23038200))*100)
-head(portion)
+proportion <- function(cand_id) {
+  final %>%
+    mutate(prop = (total/(23038200))*100) 
+}
+
+portion(cand_id = "H0MA04036" )
 ```
+
 
 ## Blog
 
