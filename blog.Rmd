@@ -60,7 +60,7 @@ all <- final %>%
 all
 ```
 
-```{R}
+```{r}
 ##create function to find proportion of donations one candidate gets in contrast to the other candidates in the state
 person_prop <- function(id) 
   final %>%
@@ -68,13 +68,14 @@ person_prop <- function(id)
     summarize(prop=(total/(23351994))*100)%>%
     select(prop)
 ```
+
 ```{r}
 ##run the function to find the donations to a certain candidate (Barney Frank)
 person_prop(id="H0MA04036")
 ```
 
 ## Blog
-We analysised the candidates' contributions by commitees in MA, 2012. We selected candidates with positive contributions, and wrote a function to find the proportion of the contribution of one certain candidate to the total contributions to all candidates in MA. 
+We analysised the candidates' contributions by commitees in MA, 2012. We selected candidates with known, positive contributions, and wrote a function to find the proportion of the contribution of one certain candidate to the total contributions to all candidates in MA. 
 
 ## Grading Rubric
 
