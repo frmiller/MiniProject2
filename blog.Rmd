@@ -33,30 +33,28 @@ indv_small <- individuals %>%
 ```
 
 ```{r}
-## Join the contribution table and individual table, so that we can see all information about one candidate in one table 
+## Show all candidates in MA with their contributions by committees
 joined <- 
   MA_only %>%
   left_join(contr_small,by="cand_id")
+head(joined)
 ```
 
-## 
 ```{r}
+## Change table joined into j2, remove column cmte_id, then find total committee contributions to candidate (so that contributions is only one row)
 j2 <- joined %>%
-  select(-cmte_id)
-
-j3 <- j2 %>%
+  select(-cmte_id) %>%
   group_by(cand_id) %>%
   summarise(total = sum(transaction_amt))
-  
+## Join j2 back to MA_only so that the cand_id and donations are matched to information about the candidates
 final <- 
   MA_only %>%
-  left_join(j3, by="cand_id")
+  left_join(j2, by="cand_id")
 final
 ```
 
-## 
 ```{r}
-##find total contributions to candidates in massachusetts
+##find total contributions to all candidates in MA
 all <- final %>%
   summarise(N = sum(total,na.rm=TRUE))
 all
@@ -75,6 +73,7 @@ person_prop <- function(id)
 ##run the function to find the donations to a certain candidate (Barney Frank) to test function
 person_prop(id="H0MA04036")
 ```
+<<<<<<< HEAD
 
 ```{r}
 can_w_contr <- c("H0MA04036", "H0MA04119", "H0MA04127", "H0MA05066", "H0MA10082", "H2MA00014", "H2MA01020", "H2MA04040", "H2MA04073", "H2MA04107", "H2MA06078", "H2MA09072", "H2MA09213", "H4MA03022", "H4MA05043", "H4MA06033", "H6MA07101", "H8MA02041", "H8MA05143", "H8MA08071", "S0MA00109", "S2MA00113", "S2MA00139", "S2MA00170")
@@ -88,8 +87,11 @@ lapply(can_w_contr, FUN = person_prop) %>%
 
 
 ## Blog
+=======
+>>>>>>> 7100660333e65bf1852343129d0ce6bdd88b1c34
 
-explaining the visaul and what found from data
+## Blog
+We analysised the candidates' contributions by commitees in MA, 2012. We selected candidates with positive contributions, and wrote a function to find the proportion of the contribution of one certain candidate to the total contributions to all candidates in MA. 
 
 ## Grading Rubric
 
