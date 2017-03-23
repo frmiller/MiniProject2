@@ -84,11 +84,7 @@ lapply(can_w_contr, FUN = person_prop) %>%
   bind_rows()
 ```
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 922d8694c0100aa17747f9776c7d4b42c3831508
 ## Blog
 We analysised the candidates' contributions by commitees in MA, 2012. We selected candidates with known, positive contributions, and wrote a function to find the proportion of the contribution of one certain candidate to the total contributions to all candidates in MA. 
 
