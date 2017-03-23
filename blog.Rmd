@@ -8,10 +8,8 @@ output: html_document
 ## goals
 1 write a function to find the portion of the contribution to one candidate
 2 apply the function to multiple candidates (possibly several candidates in one state)
-3 make a bar graph to show their comparison
-could be all elections from state
-who won vs contribution totals
 
+## load data
 ```{r, message=FALSE}
 load("house_elections.rda")
 load("candidates.rda")
@@ -21,9 +19,7 @@ load("individuals.rda")
 library(tidyverse)
 ```
 
-## Five verbs
-use select to just get candidates from one state (MA?)
-
+## wrangle data
 ```{r}
 
 MA_only <- candidates %>% filter(cand_office_state == "MA", cand_election_yr== "2012") %>%
@@ -40,15 +36,13 @@ indv_small <- individuals %>%
 
 
 ## Joining tables
-
-join the candidate table with contributions and individuals also maybe committees?
-
 ```{r}
 joined <- 
   MA_only %>%
   left_join(contr_small,by="cand_id")
 ```
 
+## 
 ```{r}
 j2 <- joined %>%
   select(-cmte_id)
@@ -63,6 +57,7 @@ final <-
 final
 ```
 
+## 
 ```{r}
 all <- final %>%
   summarise(N = sum(total,na.rm=TRUE))
@@ -79,7 +74,6 @@ person_prop <- function(id)
 ```
 ```{r}
 person_prop(id="H0MA04036")
-
 ```
 ## Blog
 
