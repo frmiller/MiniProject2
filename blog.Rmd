@@ -70,16 +70,16 @@ all <- final %>%
 all
 ```
 
-```{r}
-proportion <- function(cand_id) {
+```{R}
+person_portion <- function(id) 
   final %>%
-    mutate(prop = (total/(23038200))*100) 
-}
-
-portion(cand_id = "H0MA04036" )
+    filter(cand_id == id) %>%
+    summarize(prop=(total/(23038200))*100)%>%
+    select(prop)
 ```
-
-
+```{r}
+person_portion(id="H0MA04036")
+```
 ## Blog
 
 explaining the visaul and what found from data
