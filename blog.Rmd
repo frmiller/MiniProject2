@@ -72,14 +72,14 @@ all
 
 ```{R}
 
-person_porp <- function(id) 
+person_prop <- function(id) 
   final %>%
     filter(cand_id == id) %>%
     summarize(prop=(total/(23351994))*100)%>%
     select(prop)
 ```
 ```{r}
-person_porp(id="H0MA04036")
+person_prop(id="H0MA04036")
 
 ```
 ## Blog
