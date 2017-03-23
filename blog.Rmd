@@ -9,7 +9,6 @@ output: html_document
 1 write a function to find the portion of the contribution to one candidate
 2 apply the function to multiple candidates (possibly several candidates in one state)
 
-## load data
 ```{r, message=FALSE}
 load("house_elections.rda")
 load("candidates.rda")
@@ -19,8 +18,8 @@ load("individuals.rda")
 library(tidyverse)
 ```
 
-## Select the information for candidates in Massachusetts in the year of 2012: we selected some information about contributions inlcuding candidates, party affliation, and office, and some information about individuals, inlcuding candidates whose transaction amount is positive and their transaction amount
 ```{r}
+## Select the information for candidates in Massachusetts in the year of 2012: we selected some information about contributions inlcuding candidates, party affliation, and office, and some information about individuals, inlcuding candidates whose transaction amount is positive and their transaction amount
 MA_only <- candidates %>% filter(cand_office_state == "MA", cand_election_yr== "2012") %>%
   select(cand_id, cand_name, cand_party_affiliation, cand_office)
 
@@ -33,9 +32,8 @@ indv_small <- individuals %>%
   filter(transaction_amt >0)
 ```
 
-
-## Joining tables
 ```{r}
+## Join the contribution table and individual table, so that we can see all information about one candidate in one table 
 joined <- 
   MA_only %>%
   left_join(contr_small,by="cand_id")
