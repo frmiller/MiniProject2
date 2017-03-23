@@ -71,14 +71,14 @@ all
 ```
 
 ```{R}
-person_portion <- function(id) 
+person_porp <- function(id) 
   final %>%
     filter(cand_id == id) %>%
-    summarize(prop=(total/(23038200))*100)%>%
+    summarize(prop=(total/(23351994))*100)%>%
     select(prop)
 ```
 ```{r}
-person_portion(id="H0MA04036")
+person_porp(id="H0MA04036")
 ```
 ## Blog
 
