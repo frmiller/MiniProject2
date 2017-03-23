@@ -21,7 +21,6 @@ load("individuals.rda")
 library(tidyverse)
 ```
 
-
 ## Five verbs
 use select to just get candidates from one state (MA?)
 
@@ -72,10 +71,12 @@ all
 
 ```{R}
 person_porp <- function(id) 
+{
   final %>%
     filter(cand_id == id) %>%
     summarize(prop=(total/(23351994))*100)%>%
     select(prop)
+}
 ```
 ```{r}
 person_porp(id="H0MA04036")
