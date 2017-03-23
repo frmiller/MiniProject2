@@ -70,21 +70,23 @@ all <- final %>%
 all
 ```
 
-```{r}
-portion <- final %>%
-  group_by(cand_id)%>%
-  mutate(prop = (total/(23038200))*100)
-head(portion)
-```
 ```{R}
+<<<<<<< HEAD
 person_proportion <- function(id) 
+=======
+person_porp <- function(id) 
+>>>>>>> 98b98318a04cc153a855b03274866f37723c2282
   final %>%
     filter(cand_id == id) %>%
-    summarize(prop=(total/(23038200))*100)%>%
+    summarize(prop=(total/(23351994))*100)%>%
     select(prop)
 ```
 ```{r}
+<<<<<<< HEAD
 person_proportion(id="H0MA04036")
+=======
+person_porp(id="H0MA04036")
+>>>>>>> 98b98318a04cc153a855b03274866f37723c2282
 ```
 ## Blog
 
