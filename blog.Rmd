@@ -19,9 +19,8 @@ load("individuals.rda")
 library(tidyverse)
 ```
 
-## wrangle data
+## Select the information for candidates in Massachusetts in the year of 2012: we selected some information about contributions inlcuding candidates, party affliation, and office, and some information about individuals, inlcuding candidates whose transaction amount is positive and their transaction amount
 ```{r}
-
 MA_only <- candidates %>% filter(cand_office_state == "MA", cand_election_yr== "2012") %>%
   select(cand_id, cand_name, cand_party_affiliation, cand_office)
 
