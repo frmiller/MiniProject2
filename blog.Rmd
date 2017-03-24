@@ -5,11 +5,9 @@ date: "March 24, 2017"
 output: html_document
 ---
 
-## goals
-1 write a function to find the portion of the contribution to one candidate
-2 apply the function to multiple candidates (possibly several candidates in one state)
 
 ```{r, message=FALSE}
+##Load data and tidyverse
 load("house_elections.rda")
 load("candidates.rda")
 load("committees.rda")
@@ -86,7 +84,8 @@ lapply(can_w_contr, FUN = person_prop) %>%
 
 
 ## Blog
-We analysised the candidates' contributions by commitees in MA, 2012. We selected candidates with known, positive contributions, and wrote a function to find the proportion of the contribution of one certain candidate to the total contributions to all candidates in MA. 
+We analysised the candidates' contributions by commitees in MA, 2012. We selected candidates with known, positive contributions, and wrote a function to find the proportion of the contribution of one certain candidate to the total contributions to all candidates in MA. We learned from these data the donations that each candidate running in Massachusetts recieved in comparison to other candidates running in MA.
+Scott P Brown, a republican running for the senate, recieved the largest proportion of the donations of the candidates in MA, and Adam G Chaprales, a republican running for the house, recieved the smaller proportion of the donations of candidates in MA. The top 5 candidates who recieved the largest proportion of the donations in MA were Scott P Brown (Republican running for senate), Elizabeth Warren(Democrat running for senate), John F Tierney (Democrat running for house), Richard R Tisei (Republican running for house), and Mr. Richard E Neal (Democrat running for house).
 
 ## Grading Rubric
 
