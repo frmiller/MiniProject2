@@ -81,6 +81,18 @@ can_w_contr <- c("H0MA04036", "H0MA04119", "H0MA04127", "H0MA05066", "H0MA10082"
 lapply(can_w_contr, FUN = person_prop) %>%
   bind_rows()
 ```
+```{r}
+
+no_na <- final %>%
+  select(cand_name, total, cand_party_affiliation) %>%
+  filter(total >0)
+```
+```{r}
+p1 <- ggplot(no_na, aes(x = cand_name , 
+                          y = total)) + 
+    geom_bar(stat= "identity")
+p1 + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
 
 
 ## Blog
