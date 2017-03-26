@@ -4,7 +4,9 @@ author: "Starry Zhou, Fiona Miller, Josephine Nyoike"
 date: "March 24, 2017"
 output: html_document
 ---
-
+## Blog
+We analysised the candidates' contributions by commitees in MA, 2012. We selected candidates with known, positive contributions, and wrote a function to find the proportion of the contribution of one certain candidate to the total contributions to all candidates in MA. We learned from these data the donations that each candidate running in Massachusetts recieved in comparison to other candidates running in MA.
+Scott P Brown, a republican running for the senate, recieved the largest proportion of the donations of the candidates in MA, and Adam G Chaprales, a republican running for the house, recieved the smaller proportion of the donations of candidates in MA. The top 5 candidates who recieved the largest proportion of the donations in MA were Scott P Brown (Republican running for senate), Elizabeth Warren(Democrat running for senate), John F Tierney (Democrat running for house), Richard R Tisei (Republican running for house), and Mr. Richard E Neal (Democrat running for house). Adding a visualization helped us view the proportions of the contributions more clearly. We can easily tell whose contributions were the most and who had little to no money contributed towards their campaign.
 
 ```{r, message=FALSE}
 ##Load data and tidyverse
@@ -95,29 +97,5 @@ p1 + theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
 
-## Blog
-We analysised the candidates' contributions by commitees in MA, 2012. We selected candidates with known, positive contributions, and wrote a function to find the proportion of the contribution of one certain candidate to the total contributions to all candidates in MA. We learned from these data the donations that each candidate running in Massachusetts recieved in comparison to other candidates running in MA.
-Scott P Brown, a republican running for the senate, recieved the largest proportion of the donations of the candidates in MA, and Adam G Chaprales, a republican running for the house, recieved the smaller proportion of the donations of candidates in MA. The top 5 candidates who recieved the largest proportion of the donations in MA were Scott P Brown (Republican running for senate), Elizabeth Warren(Democrat running for senate), John F Tierney (Democrat running for house), Richard R Tisei (Republican running for house), and Mr. Richard E Neal (Democrat running for house). Adding a visualization helped us view the proportions of the contributions more clearly. We can easily tell whose contributions were the most and who had little to no money contributed towards their campaign.
 
-## Grading Rubric
 
-To get full credit for this Mini-Project, you must earn 10 points out of the following 12:
-
-Baseline
-
-+1 for an .Rmd that compiles without errors
-+1 for including the code that wrangled the data
-+1 for using at least two of the five basic verbs (i.e., select(), mutate(), etc.)
-+1 for annotating your data wrangling pipeline (this can be in a few sentences in text surrounding the R code chunks, or some informative comments inside the R code chunks)
-+1 unnecessary messages from R are hidden from being displayed in the HTML
-Average
-
-+1 for explaining in a single coherent sentence what we can learn from these data
-+1 for writing a function rather than re-writing the same code multiple times
-+1 for using at least one join (e.g. left_join(), inner_join(), etc.)
-+1 blog post text provides context or background useful in interpreting the graphic
-+1 for using GitHub for version control
-Advanced
-
-+1 for using the Issues tab on GitHub to plan your project
-+1 WOW factor: awarded at the professors’ discretion for submissions that are exceptionally compelling
