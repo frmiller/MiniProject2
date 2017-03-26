@@ -93,7 +93,7 @@ no_na <- final %>%
 p1 <- ggplot(no_na, aes(x = cand_name , 
                           y = total, fill = cand_party_affiliation)) + 
     geom_bar(stat= "identity") +
-  scale_fill_manual(values = c("#0000FF", "#FFFF00", "#FF0000"),(guide = guide_legend(title = "Party")))+
+  scale_fill_manual(values = c("#0000FF", "#FFFF00", "#FF0000"),(guide = guide_legend(title = "Party")),labels = c("Democrat", "Libertarian", "Republican"))+
   xlab("Candidate Name")+
   ylab("Total Contributions")
 p1 + theme(axis.text.x = element_text(angle = 45, hjust = 1))
